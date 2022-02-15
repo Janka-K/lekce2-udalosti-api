@@ -16,3 +16,7 @@ function priNajetiNaCtverec(){
     console.log("test" + pocitadlo);
     pocitadlo ++; //zvednuti hodnoty v promenne o 1
 }
+
+function zmenStyl(){
+    nadpis.classList.toggle('zeleny'); // priklad na toggle, pri kliku se nadpis obarvi zelene, pokud jiz zeleny je, pak se zelena ztrati
+}
