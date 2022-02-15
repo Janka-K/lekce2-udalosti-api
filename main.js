@@ -7,3 +7,12 @@ nadpis.classList.remove('zluty'); //odebrani tridy
 let ctverecek = document.querySelector('div.zluty');
 ctverecek.classList.add('ctverecek');
 
+let pocitadlo = 0;
+
+
+
+
+function priNajetiNaCtverec(){
+    console.log("test" + pocitadlo);
+    pocitadlo ++; //zvednuti hodnoty v promenne o 1
+}
