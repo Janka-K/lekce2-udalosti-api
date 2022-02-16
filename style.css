@@ -121,3 +121,11 @@ li {
 	color: black;
 	border-color: blue;
 }
+
+.cervena {
+	color: red;
+}
+
+p {
+	font-size: 16px;
+}
