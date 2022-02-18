@@ -21,21 +21,24 @@
     <p onmouseover="priNajetiNaText()" onmouseout="priOdjetiZTextu()">
       V elipse spi lev
     </p>
-    <button onclick="obarviCervene()">
-      Po kliknuti cervene
-    </button>
+    <button onclick="obarviCervene()">Po kliknuti cervene</button>
     <button onclick="zvetseniOPixel()">Vetsi po kliknuti</button>
 
     <img class="obrazek" src="obrazky/kocka.jpg" />
 
     <button class="tlacitko">Čudlajs</button>
-
+    <h2>Audio přehrávač</h2>
     <audio
       id="#zvukovaStopa"
       src="audio/dingdingdang.mp3"
       preload="auto"
     ></audio>
-    <button class="tlacitko" onclick="startAudio()">Pust audio</button>
+    <button onclick="startAudio()">Pust audio</button>
+    <button onclick="stopAudio()">Pauzni audio</button>
+    <button onclick="silentAudio()">Ztiš audio</button>
+    <button onclick="normalAudio()">Normalni hlasitost</button>
+    <button onclick="maxAudio()">Hlasitost na maximum</button>
+    <button onclick="reloadAudio()">Audio na zacatek</button>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

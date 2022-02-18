@@ -46,3 +46,36 @@ function zvetseniOPixel() {
   let text = document.querySelector("p");
   text.style.fontSize = counter++ + "px";
 }
+
+
+function stopAudio(){
+    let audioFile = document.getElementById("#zvukovaStopa");
+    audioFile.pause();
+}
+
+
+function reloadAudio(){
+    let audioFile = document.getElementById("#zvukovaStopa");
+    audioFile.load();
+    audioFile.play();
+}
+
+
+function maxAudio(){
+    let audioFile = document.getElementById("#zvukovaStopa");
+    audioFile.play();
+    audioFile.volume = 1;
+    
+}
+
+function silentAudio() {
+    let audioFile = document.getElementById("#zvukovaStopa");
+    audioFile.play();
+    audioFile.volume = 0;
+}
+
+function normalAudio(){
+    let audioFile = document.getElementById("#zvukovaStopa");
+    audioFile.play();
+    audioFile.volume = 0.5;
+}
