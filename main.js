@@ -61,21 +61,11 @@ function reloadAudio(){
 }
 
 
-function maxAudio(){
-    let audioFile = document.getElementById("#zvukovaStopa");
-    audioFile.play();
-    audioFile.volume = 1;
-    
-}
+// *** @param {float} a 
 
-function silentAudio() {
-    let audioFile = document.getElementById("#zvukovaStopa");
-    audioFile.play();
-    audioFile.volume = 0;
-}
 
-function normalAudio(){
+function volumeAudio(a){
     let audioFile = document.getElementById("#zvukovaStopa");
     audioFile.play();
-    audioFile.volume = 0.5;
+    audioFile.volume = a;
 }
