@@ -40,11 +40,16 @@ function obarviCervene() {
   text.classList.toggle("cervena");
 }
 
-let counter = 16; //zde by slo jeste zlepsit nacitani font-size z elementu
+
+// zkusit dopracovat funkci tak,aby promenne byly soucasti funkce + porovadel se spravny vypocet
+
+
+let computedFontSize = window.getComputedStyle(document.getElementById("#odstavec")).fontSize;
+let replacePx = Number(computedFontSize.replace("px",""));
 
 function zvetseniOPixel() {
-  let text = document.querySelector("p");
-  text.style.fontSize = counter++ + "px";
+    let text = document.getElementById("#odstavec");
+    text.style.fontSize = replacePx++ + "px";
 }
 
 
@@ -69,3 +74,6 @@ function volumeAudio(a){
     audioFile.play();
     audioFile.volume = a;
 }
+
+
+
