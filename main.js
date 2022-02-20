@@ -30,37 +30,36 @@ function priOdjetiZTextu() {
 
 function startAudio() {
     // vyvolani audia na strance
-    let audioFile = document.getElementById("#zvukovaStopa");
-    console.log("Zapinam hudbu");
+    let audioFile = document.getElementById("#audioSound");
     audioFile.play();
 }
 
-function obarviCervene() {
+function makeFontRed() {
     let text = document.querySelector("p");
-    text.classList.toggle("cervena");
+    text.classList.toggle("red");
 }
 
 // 1 ) D.U. Zvetsovani textu o pixel pri kazdem kliku
 
-let findFontSize = window.getComputedStyle(document.getElementById("#odstavec")).fontSize;
+let findFontSize = window.getComputedStyle(document.getElementById("#paragraph")).fontSize;
 let replacePx = Number(findFontSize.replace("px", ""));
 
-function zvetseniOPixel() {
-    let text = document.getElementById("#odstavec");
+function makeFontBigger() {
+    let text = document.getElementById("#paragraph");
     text.style.fontSize = replacePx++ + "px";
 }
 
 // 2) D.U. Vypnuti hudby pri kliku, hudba pri spusteni pote hraje od stejneho mista,kde puvodne skoncila
 
 function stopAudio() {
-    let audioFile = document.getElementById("#zvukovaStopa");
+    let audioFile = document.getElementById("#audioSound");
     audioFile.pause();
 }
 
 // 3) D.U. Vraceni hudby pri kliku, hudba pri kliku zacne hrat od zacatku
 
 function reloadAudio() {
-    let audioFile = document.getElementById("#zvukovaStopa");
+    let audioFile = document.getElementById("#audioSound");
     audioFile.load();
     audioFile.play();
 }
@@ -70,7 +69,7 @@ function reloadAudio() {
 // *** @param {float} a
 
 function volumeAudio(a) {
-    let audioFile = document.getElementById("#zvukovaStopa");
+    let audioFile = document.getElementById("#audioSound");
     audioFile.play();
     audioFile.volume = a;
 }
