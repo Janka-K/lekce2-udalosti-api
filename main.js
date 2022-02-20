@@ -19,12 +19,12 @@ function zmenStyl() {
 }
 
 function priNajetiNaText() {
-    let text = document.querySelector("#odstavec");
+    let text = document.querySelector("p");
     text.style.fontWeight = "bold";
 }
 
 function priOdjetiZTextu() {
-    let text = document.querySelector("#odstavec");
+    let text = document.querySelector("p");
     text.style.fontWeight = "normal";
 }
 
@@ -36,16 +36,16 @@ function startAudio() {
 }
 
 function obarviCervene() {
-    let text = document.querySelector("#odstavec");
+    let text = document.querySelector("p");
     text.classList.toggle("cervena");
 }
 
 // 1 ) D.U. Zvetsovani textu o pixel pri kazdem kliku
 
-let computedFontSize = window.getComputedStyle(
+let findFontSize = window.getComputedStyle(
     document.getElementById("#odstavec")
 ).fontSize;
-let replacePx = Number(computedFontSize.replace("px", ""));
+let replacePx = Number(findFontSize.replace("px", ""));
 
 function zvetseniOPixel() {
     let text = document.getElementById("#odstavec");
