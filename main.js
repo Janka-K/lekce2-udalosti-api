@@ -42,9 +42,7 @@ function obarviCervene() {
 
 // 1 ) D.U. Zvetsovani textu o pixel pri kazdem kliku
 
-let findFontSize = window.getComputedStyle(
-    document.getElementById("#odstavec")
-).fontSize;
+let findFontSize = window.getComputedStyle(document.getElementById("#odstavec")).fontSize;
 let replacePx = Number(findFontSize.replace("px", ""));
 
 function zvetseniOPixel() {
