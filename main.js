@@ -10,70 +10,69 @@ ctverecek.classList.add("ctverecek");
 let pocitadlo = 0;
 
 function priNajetiNaCtverec() {
-  console.log("test" + pocitadlo);
-  pocitadlo++; //zvednuti hodnoty v promenne o 1
+    console.log("test" + pocitadlo);
+    pocitadlo++; //zvednuti hodnoty v promenne o 1
 }
 
 function zmenStyl() {
-  nadpis.classList.toggle("zeleny"); // priklad na toggle, pri kliku se nadpis obarvi zelene, pokud jiz zeleny je, pak se zelena ztrati
+    nadpis.classList.toggle("zeleny"); // priklad na toggle, pri kliku se nadpis obarvi zelene, pokud jiz zeleny je, pak se zelena ztrati
 }
 
 function priNajetiNaText() {
-  let text = document.querySelector("p");
-  text.style.fontWeight = "bold";
+    let text = document.querySelector("#odstavec");
+    text.style.fontWeight = "bold";
 }
 
 function priOdjetiZTextu() {
-  let text = document.querySelector("p");
-  text.style.fontWeight = "normal";
+    let text = document.querySelector("#odstavec");
+    text.style.fontWeight = "normal";
 }
 
 function startAudio() {
-  // vyvolani audia na strance
-  let audioFile = document.getElementById("#zvukovaStopa");
-  console.log("Zapinam hudbu");
-  audioFile.play();
+    // vyvolani audia na strance
+    let audioFile = document.getElementById("#zvukovaStopa");
+    console.log("Zapinam hudbu");
+    audioFile.play();
 }
 
 function obarviCervene() {
-  let text = document.querySelector("p");
-  text.classList.toggle("cervena");
+    let text = document.querySelector("#odstavec");
+    text.classList.toggle("cervena");
 }
 
+// 1 ) D.U. Zvetsovani textu o pixel pri kazdem kliku
 
-// zkusit dopracovat funkci tak,aby promenne byly soucasti funkce + porovadel se spravny vypocet
-
-
-let computedFontSize = window.getComputedStyle(document.getElementById("#odstavec")).fontSize;
-let replacePx = Number(computedFontSize.replace("px",""));
+let computedFontSize = window.getComputedStyle(
+    document.getElementById("#odstavec")
+).fontSize;
+let replacePx = Number(computedFontSize.replace("px", ""));
 
 function zvetseniOPixel() {
     let text = document.getElementById("#odstavec");
     text.style.fontSize = replacePx++ + "px";
 }
 
+// 2) D.U. Vypnuti hudby pri kliku, hudba pri spusteni pote hraje od stejneho mista,kde puvodne skoncila
 
-function stopAudio(){
+function stopAudio() {
     let audioFile = document.getElementById("#zvukovaStopa");
     audioFile.pause();
 }
 
+// 3) D.U. Vraceni hudby pri kliku, hudba pri kliku zacne hrat od zacatku
 
-function reloadAudio(){
+function reloadAudio() {
     let audioFile = document.getElementById("#zvukovaStopa");
     audioFile.load();
     audioFile.play();
 }
 
+//4) Funkce obsluhujici nastavovani hlasitosti zvuku - mutovany zvuk (tichy), normalni sila zvuku, zvuk nahlas.
 
-// *** @param {float} a 
+// *** @param {float} a
 
-
-function volumeAudio(a){
+function volumeAudio(a) {
     let audioFile = document.getElementById("#zvukovaStopa");
     audioFile.play();
     audioFile.volume = a;
 }
-
-
-
